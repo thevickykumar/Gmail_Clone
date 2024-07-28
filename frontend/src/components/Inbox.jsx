@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-vars */
-import React,{useState} from "react";
+import React, { useState } from "react";
 import {
   MdCropSquare,
   MdInbox,
@@ -27,7 +26,7 @@ const mailType = [
 ];
 
 const Inbox = () => {
-    const [selected, setSelected] = useState(0);
+  const [selected, setSelected] = useState(0);
   return (
     <div className="flex-1 bg-white rounded-xl mx-5">
       <div className="flex items-center justify-between px-4 my-2">
@@ -53,7 +52,6 @@ const Inbox = () => {
         <div className="flex items-center gap-1">
           {mailType.map((item, index) => {
             return (
-              // eslint-disable-next-line react/jsx-key
               <button
                 onClick={() => setSelected(index)}
                 className={` ${
@@ -62,14 +60,13 @@ const Inbox = () => {
                     : "border-b-4 border-b-transparent"
                 } flex items-center gap-5 p-4 w-52 hover:bg-gray-100`}
               >
-                {" "}
                 {item.icon}
                 <span>{item.text}</span>
               </button>
             );
           })}
         </div>
-        <Emails/>
+        <Emails />
       </div>
     </div>
   );

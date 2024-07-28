@@ -3,13 +3,14 @@ import { IoMdStar } from "react-icons/io";
 import { LuPencil } from "react-icons/lu";
 import {
   MdInbox,
+  MdMore,
   MdOutlineDrafts,
   MdOutlineKeyboardArrowDown,
   MdOutlineWatchLater,
 } from "react-icons/md";
-import { useDispatch } from 'react-redux';
-import { setOpen } from '../redux/appSlice';
 import { TbSend2 } from "react-icons/tb";
+import { useDispatch } from "react-redux";
+import { setOpen } from "../redux/appSlice";
 
 const sidebarItems = [
   {
@@ -43,7 +44,10 @@ const Sidebar = () => {
   return (
     <div className="w-[15%]">
       <div className="p-3">
-        <button onClick={()=> dispatch(setOpen(true))} className="flex items-center gap-2 bg-[#C2E7FF] p-4 rounded-2xl hover:shadow-md">
+        <button
+          onClick={() => dispatch(setOpen(true))}
+          className="flex items-center gap-2 bg-[#C2E7FF] p-4 rounded-2xl hover:shadow-md"
+        >
           <LuPencil size="24px" />
           Compose
         </button>
@@ -51,7 +55,6 @@ const Sidebar = () => {
       <div className="text-gray-600">
         {sidebarItems.map((item, index) => {
           return (
-            // eslint-disable-next-line react/jsx-key
             <div className="flex items-center pl-6 py-1 rounded-r-full gap-4 my-2 hover:cursor-pointer hover:bg-gray-200">
               {item.icon}
               <p>{item.text}</p>
